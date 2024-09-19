@@ -6,5 +6,5 @@ A small collection of my previous and newer work-in-progress Marching Cubes and 
 Marching Cubes - GPU Compute Shader (smooth and flat shaded normals in GPU)
 Marching Tetrahedra - GPU Compute Shader (smooth and flat shaded normals in GPU)
 
-### CURRENT GOAL:
+### CURRENT GOAL
 Convert compute shader to Unity's LLVM Burst compiler for a CPU-only version (nice for server-sided generation to generate colliders where we don't have access to a graphics card).
