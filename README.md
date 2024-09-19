@@ -8,4 +8,4 @@ A small collection of my previous and newer work-in-progress Marching Cubes and 
 
 ### CURRENT GOAL
 - Implement Volume Rendering Test Data Set scripts for better examples
-- Convert GPU compute shaders to Unity's LLVM Burst compiler for a CPU-only version (nice for server-sided generation to generate colliders where we don't have access to a graphics card).
+- Convert GPU compute shaders to Unity's LLVM Burst compiler for a CPU-only version (nice for server-sided generation to generate colliders where we don't have access to a graphics card)
