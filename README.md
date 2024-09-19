@@ -1,6 +1,6 @@
 # MarchingPolygonsExamples
 
-A small collection of my previous and newer work-in-progress Marching Cubes and Marching Polygons algorithms. The original compute shaders were written for a final game I'm working on, hence why the data and test script is based on a noise algorithm. Will soon implement a script to render some of the examples from the Chapel Hill Volume Rendering Test Data Set.
+A small collection of my previous and newer work-in-progress Marching Cubes and Marching Polygons algorithms. The original compute shaders were written for a final game I'm working on, hence why the data and test script is based on a noise algorithm.
 
 ### CURRENTLY DONE
 - Marching Cubes - GPU Compute Shader (smooth and flat shaded normals in GPU)
