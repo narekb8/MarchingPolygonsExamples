@@ -10,6 +10,7 @@ public class GenMapShader : MonoBehaviour
     [SerializeField] Vector3 mapSize = new Vector3(16, 16, 16);
     [SerializeField] bool useRand = true;
     [SerializeField] int arenaSeed = 10;
+    [SerializeField] bool useSmoothNormals = true;
 
     struct Triangle
     {
@@ -119,6 +120,7 @@ public class GenMapShader : MonoBehaviour
         NoiseShader.Dispatch(0, (int)mapSize.x / 8, (int)mapSize.y / 8, (int)mapSize.z / 8);
         
         MarchingShader.SetBuffer(0, "_Triangles", _triBuffer);
+	MarchingShader.SetBool("_SmoothNormals", useSmoothNormals);
         MarchingShader.SetFloat("_ChunkSizeX", mapSize.x);
         MarchingShader.SetFloat("_ChunkSizeY", mapSize.y);
         MarchingShader.SetFloat("_ChunkSizeZ", mapSize.z);
