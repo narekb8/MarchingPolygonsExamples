@@ -268,6 +268,7 @@ struct Triangle
     float3 a, b, c, normA, normB, normC;
 };
 
+bool _SmoothNormals;
 float _IsoLevel;
 float _ChunkSizeX;
 float _ChunkSizeY;
