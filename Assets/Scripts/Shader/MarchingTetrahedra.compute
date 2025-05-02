@@ -146,13 +146,18 @@ void polygoniseTri(int3 id, int iter, int v0, int v1, int v2, int v3)
         _Tri.b = vertices[1];
         _Tri.c = vertices[2];
 
-        _Tri.normA = normals[0];
-        _Tri.normB = normals[1];
-        _Tri.normC = normals[2];
-
-        //_Tri.normC = normalize(cross(_Tri.c - _Tri.a, _Tri.b - _Tri.a));
-        //_Tri.normB = normalize(cross(_Tri.a - _Tri.b, _Tri.c - _Tri.b));
-        //_Tri.normA = normalize(cross(_Tri.b - _Tri.c, _Tri.a - _Tri.c));
+        if(_SmoothNormals)
+        {
+            _Tri.normA = normals[0];
+            _Tri.normB = normals[1];
+            _Tri.normC = normals[2];
+        }
+        else
+        {
+            _Tri.normC = normalize(cross(_Tri.c - _Tri.a, _Tri.b - _Tri.a));
+            _Tri.normB = normalize(cross(_Tri.a - _Tri.b, _Tri.c - _Tri.b));
+            _Tri.normA = normalize(cross(_Tri.b - _Tri.c, _Tri.a - _Tri.c));
+        }
 
         _Triangles.Append(_Tri);
     }

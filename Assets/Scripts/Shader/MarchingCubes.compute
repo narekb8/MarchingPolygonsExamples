@@ -366,13 +366,18 @@ void CSMain (uint3 id : SV_DispatchThreadID)
         _Tri.b = interp(_CubePoints[b0], _CubePoints[b1]);
         _Tri.a = interp(_CubePoints[c0], _CubePoints[c1]);
 
-        _Tri.normC = calcVertexNormal(_CubePoints[a0], _CubePoints[a1]);
-        _Tri.normB = calcVertexNormal(_CubePoints[b0], _CubePoints[b1]);
-        _Tri.normA = calcVertexNormal(_CubePoints[c0], _CubePoints[c1]);
-
-        //_Tri.normC = normalize(cross(_Tri.c - _Tri.a, _Tri.b - _Tri.a));
-        //_Tri.normB = normalize(cross(_Tri.a - _Tri.b, _Tri.c - _Tri.b));
-        //_Tri.normA = normalize(cross(_Tri.b - _Tri.c, _Tri.a - _Tri.c));
+        if(_SmoothNormals)
+        {
+            _Tri.normC = calcVertexNormal(_CubePoints[a0], _CubePoints[a1]);
+            _Tri.normB = calcVertexNormal(_CubePoints[b0], _CubePoints[b1]);
+            _Tri.normA = calcVertexNormal(_CubePoints[c0], _CubePoints[c1]);
+        }
+        else
+        {
+            _Tri.normC = normalize(cross(_Tri.c - _Tri.a, _Tri.b - _Tri.a));
+            _Tri.normB = normalize(cross(_Tri.a - _Tri.b, _Tri.c - _Tri.b));
+            _Tri.normA = normalize(cross(_Tri.b - _Tri.c, _Tri.a - _Tri.c));
+        }
 
         _Triangles.Append(_Tri);
     }
